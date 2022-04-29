@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:dio/dio.dart';
 import 'package:state_managers_review/bloc/data/models/city.dart';
+import 'package:state_managers_review/bloc/data/models/weather.dart';
 
 class NetworkClient {
   final Dio dio;
@@ -20,5 +21,18 @@ class NetworkClient {
     }
 
     return cities;
+  }
+
+  Future<Weather> getWeather({
+    required double lat,
+    required double lon,
+  }) async {
+    final _response = await dio.get(
+      'https://fcc-weather-api.glitch.me/api/current?lat=$lat&lon=$lon',
+    );
+
+    return Weather.fromJson(
+      _response.data,
+    );
   }
 }
