@@ -28,7 +28,9 @@ class CitiesScreen extends StatelessWidget {
                 onTap: () => Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const WeatherScreen(),
+                    builder: (context) => WeatherScreen(
+                      city: cities[index],
+                    ),
                   ),
                 ),
               ),
