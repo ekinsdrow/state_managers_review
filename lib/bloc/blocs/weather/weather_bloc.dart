@@ -23,7 +23,7 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
     Emitter<WeatherState> emit,
   ) async {
     emit(const _Loading());
-    Weather weather;
+    Weather? weather;
 
     try {
       weather = await weatherRepository.getWeather(
@@ -32,12 +32,12 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
       );
     } catch (e) {
       emit(_Error(error: e.toString()));
-
-      rethrow;
     }
 
-    emit(
+    if (weather != null) {
+      emit(
       _Success(weather: weather),
     );
+    }
   }
 }

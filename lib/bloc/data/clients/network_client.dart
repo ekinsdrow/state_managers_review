@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:dio/dio.dart';
 import 'package:state_managers_review/bloc/data/models/city.dart';
 import 'package:state_managers_review/bloc/data/models/weather.dart';

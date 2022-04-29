@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:state_managers_review/bloc/data/models/city.dart';
+import 'package:state_managers_review/bloc/di/weather_scope.dart';
 
 class WeatherScreen extends StatelessWidget {
   const WeatherScreen({
@@ -11,14 +12,17 @@ class WeatherScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Weather in ${city.name}'),
-      ),
-      body: Center(
-        child: Text(
-          'Berlin - 45C',
-          style: Theme.of(context).textTheme.headline3,
+    return WeatherScope(
+      city: city,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text('Weather in ${city.name}'),
+        ),
+        body: Center(
+          child: Text(
+            'Berlin - 45C',
+            style: Theme.of(context).textTheme.headline3,
+          ),
         ),
       ),
     );
