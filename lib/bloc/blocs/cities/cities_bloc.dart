@@ -23,21 +23,18 @@ class CitiesBloc extends Bloc<CitiesEvent, CitiesState> {
     Emitter<CitiesState> emit,
   ) async {
     emit(const _Loading());
-    List<City>? cities;
+    List<City> cities;
 
     try {
       cities = await citiesRepository.getCities();
     } catch (e) {
       emit(_Error(error: e.toString()));
 
-      print(e);
       rethrow;
     }
 
-    if (cities != null) {
-      emit(
-        _Success(cities: cities),
-      );
-    }
+    emit(
+      _Success(cities: cities),
+    );
   }
 }
