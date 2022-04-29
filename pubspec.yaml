@@ -11,10 +11,30 @@ dependencies:
   flutter:
     sdk: flutter
 
+  #Network
+  retrofit: ^2.2.0
+  dio: ^4.0.1
+
+  #DI
+  provider: ^6.0.1
+
+  #Architecture
+  bloc: ^8.0.1
+  flutter_bloc: ^8.0.1
+
+  #Utils
+  freezed: ^0.15.0+1
+  freezed_annotation: ^0.15.0
+  json_annotation: ^4.3.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  json_serializable: ^6.0.1
+  retrofit_generator: ^2.2.0
+  build_runner: ^2.1.5
   flutter_lints: ^1.0.0
+
 
 flutter:
   uses-material-design: true
