@@ -29,15 +29,14 @@ class CitiesBloc extends Bloc<CitiesEvent, CitiesState> {
       cities = await citiesRepository.getCities();
     } catch (e) {
       emit(_Error(error: e.toString()));
+
+      print(e);
+      rethrow;
     }
 
     if (cities != null) {
       emit(
         _Success(cities: cities),
-      );
-    } else {
-      emit(
-        const _Error(error: 'Cities is empty'),
       );
     }
   }

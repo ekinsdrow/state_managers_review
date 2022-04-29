@@ -21,11 +21,12 @@ City _$CityFromJson(Map<String, dynamic> json) {
 class _$CityTearOff {
   const _$CityTearOff();
 
-  _City call({required String name, required double lat, required double lon}) {
+  _City call(
+      {required String name, required double lat, required double long}) {
     return _City(
       name: name,
       lat: lat,
-      lon: lon,
+      long: long,
     );
   }
 
@@ -41,7 +42,7 @@ const $City = _$CityTearOff();
 mixin _$City {
   String get name => throw _privateConstructorUsedError;
   double get lat => throw _privateConstructorUsedError;
-  double get lon => throw _privateConstructorUsedError;
+  double get long => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -52,7 +53,7 @@ mixin _$City {
 abstract class $CityCopyWith<$Res> {
   factory $CityCopyWith(City value, $Res Function(City) then) =
       _$CityCopyWithImpl<$Res>;
-  $Res call({String name, double lat, double lon});
+  $Res call({String name, double lat, double long});
 }
 
 /// @nodoc
@@ -67,7 +68,7 @@ class _$CityCopyWithImpl<$Res> implements $CityCopyWith<$Res> {
   $Res call({
     Object? name = freezed,
     Object? lat = freezed,
-    Object? lon = freezed,
+    Object? long = freezed,
   }) {
     return _then(_value.copyWith(
       name: name == freezed
@@ -78,9 +79,9 @@ class _$CityCopyWithImpl<$Res> implements $CityCopyWith<$Res> {
           ? _value.lat
           : lat // ignore: cast_nullable_to_non_nullable
               as double,
-      lon: lon == freezed
-          ? _value.lon
-          : lon // ignore: cast_nullable_to_non_nullable
+      long: long == freezed
+          ? _value.long
+          : long // ignore: cast_nullable_to_non_nullable
               as double,
     ));
   }
@@ -91,7 +92,7 @@ abstract class _$CityCopyWith<$Res> implements $CityCopyWith<$Res> {
   factory _$CityCopyWith(_City value, $Res Function(_City) then) =
       __$CityCopyWithImpl<$Res>;
   @override
-  $Res call({String name, double lat, double lon});
+  $Res call({String name, double lat, double long});
 }
 
 /// @nodoc
@@ -107,7 +108,7 @@ class __$CityCopyWithImpl<$Res> extends _$CityCopyWithImpl<$Res>
   $Res call({
     Object? name = freezed,
     Object? lat = freezed,
-    Object? lon = freezed,
+    Object? long = freezed,
   }) {
     return _then(_City(
       name: name == freezed
@@ -118,9 +119,9 @@ class __$CityCopyWithImpl<$Res> extends _$CityCopyWithImpl<$Res>
           ? _value.lat
           : lat // ignore: cast_nullable_to_non_nullable
               as double,
-      lon: lon == freezed
-          ? _value.lon
-          : lon // ignore: cast_nullable_to_non_nullable
+      long: long == freezed
+          ? _value.long
+          : long // ignore: cast_nullable_to_non_nullable
               as double,
     ));
   }
@@ -129,7 +130,7 @@ class __$CityCopyWithImpl<$Res> extends _$CityCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_City implements _City {
-  _$_City({required this.name, required this.lat, required this.lon});
+  _$_City({required this.name, required this.lat, required this.long});
 
   factory _$_City.fromJson(Map<String, dynamic> json) => _$$_CityFromJson(json);
 
@@ -138,11 +139,11 @@ class _$_City implements _City {
   @override
   final double lat;
   @override
-  final double lon;
+  final double long;
 
   @override
   String toString() {
-    return 'City(name: $name, lat: $lat, lon: $lon)';
+    return 'City(name: $name, lat: $lat, long: $long)';
   }
 
   @override
@@ -152,11 +153,11 @@ class _$_City implements _City {
             other is _City &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.lat, lat) || other.lat == lat) &&
-            (identical(other.lon, lon) || other.lon == lon));
+            (identical(other.long, long) || other.long == long));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, name, lat, lon);
+  int get hashCode => Object.hash(runtimeType, name, lat, long);
 
   @JsonKey(ignore: true)
   @override
@@ -173,7 +174,7 @@ abstract class _City implements City {
   factory _City(
       {required String name,
       required double lat,
-      required double lon}) = _$_City;
+      required double long}) = _$_City;
 
   factory _City.fromJson(Map<String, dynamic> json) = _$_City.fromJson;
 
@@ -182,7 +183,7 @@ abstract class _City implements City {
   @override
   double get lat;
   @override
-  double get lon;
+  double get long;
   @override
   @JsonKey(ignore: true)
   _$CityCopyWith<_City> get copyWith => throw _privateConstructorUsedError;

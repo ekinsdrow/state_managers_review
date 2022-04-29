@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:dio/dio.dart';
 import 'package:state_managers_review/bloc/data/models/city.dart';
 
@@ -7,13 +9,8 @@ class NetworkClient {
   NetworkClient(this.dio);
 
   Future<List<City>> getCities() async {
-    final _response = await dio.post(
-      'https://countriesnow.space/api/v0.1/countries/positions/range',
-      data: {
-        "type": "long",
-        "min": 1,
-        "max": 40,
-      },
+    final _response = await dio.get(
+      'https://countriesnow.space/api/v0.1/countries/positions/range/q?type=long&min=1&max=10',
     );
 
     final cities = <City>[];
