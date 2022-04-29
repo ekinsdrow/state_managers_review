@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:state_managers_review/bloc/widgets/cities_screen.dart';
 
 void main() {
   runApp(
@@ -17,10 +18,10 @@ class App extends StatelessWidget {
           title: const Text('State managers'),
         ),
         body: ListView(
-          children: [
+          children: const [
             _Item(
-              text: 'Test',
-              widget: Container(),
+              text: 'BLoC',
+              widget: CitiesScreen(),
             ),
           ],
         ),
