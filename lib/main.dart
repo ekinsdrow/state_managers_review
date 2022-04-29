@@ -1,4 +1,7 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:state_managers_review/bloc/widgets/cities_screen.dart';
 
 void main() {
   runApp(
@@ -11,18 +14,21 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('State managers'),
-        ),
-        body: ListView(
-          children: [
-            _Item(
-              text: 'Test',
-              widget: Container(),
-            ),
-          ],
+    return Provider(
+      create: (context) => Dio(),
+      child: MaterialApp(
+        home: Scaffold(
+          appBar: AppBar(
+            title: const Text('State managers'),
+          ),
+          body: ListView(
+            children: const [
+              _Item(
+                text: 'BLoC',
+                widget: CitiesScreen(),
+              ),
+            ],
+          ),
         ),
       ),
     );
