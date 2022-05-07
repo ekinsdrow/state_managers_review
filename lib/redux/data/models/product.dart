@@ -6,5 +6,6 @@ part 'product.freezed.dart';
 class Product with _$Product {
   factory Product({
     required String name,
+    required int id,
   }) = _Product;
 }

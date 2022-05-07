@@ -11,7 +11,10 @@ class ProductRepository implements IProductRepository {
 
     for (var i = 0; i < 100; i++) {
       products.add(
-        Product(name: 'Product $i'),
+        Product(
+          name: 'Product $i',
+          id: i,
+        ),
       );
     }
 

@@ -17,9 +17,10 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$ProductTearOff {
   const _$ProductTearOff();
 
-  _Product call({required String name}) {
+  _Product call({required String name, required int id}) {
     return _Product(
       name: name,
+      id: id,
     );
   }
 }
@@ -30,6 +31,7 @@ const $Product = _$ProductTearOff();
 /// @nodoc
 mixin _$Product {
   String get name => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ProductCopyWith<Product> get copyWith => throw _privateConstructorUsedError;
@@ -39,7 +41,7 @@ mixin _$Product {
 abstract class $ProductCopyWith<$Res> {
   factory $ProductCopyWith(Product value, $Res Function(Product) then) =
       _$ProductCopyWithImpl<$Res>;
-  $Res call({String name});
+  $Res call({String name, int id});
 }
 
 /// @nodoc
@@ -53,12 +55,17 @@ class _$ProductCopyWithImpl<$Res> implements $ProductCopyWith<$Res> {
   @override
   $Res call({
     Object? name = freezed,
+    Object? id = freezed,
   }) {
     return _then(_value.copyWith(
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -68,7 +75,7 @@ abstract class _$ProductCopyWith<$Res> implements $ProductCopyWith<$Res> {
   factory _$ProductCopyWith(_Product value, $Res Function(_Product) then) =
       __$ProductCopyWithImpl<$Res>;
   @override
-  $Res call({String name});
+  $Res call({String name, int id});
 }
 
 /// @nodoc
@@ -83,12 +90,17 @@ class __$ProductCopyWithImpl<$Res> extends _$ProductCopyWithImpl<$Res>
   @override
   $Res call({
     Object? name = freezed,
+    Object? id = freezed,
   }) {
     return _then(_Product(
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -96,14 +108,16 @@ class __$ProductCopyWithImpl<$Res> extends _$ProductCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Product implements _Product {
-  _$_Product({required this.name});
+  _$_Product({required this.name, required this.id});
 
   @override
   final String name;
+  @override
+  final int id;
 
   @override
   String toString() {
-    return 'Product(name: $name)';
+    return 'Product(name: $name, id: $id)';
   }
 
   @override
@@ -111,11 +125,12 @@ class _$_Product implements _Product {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Product &&
-            (identical(other.name, name) || other.name == name));
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.id, id) || other.id == id));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, name);
+  int get hashCode => Object.hash(runtimeType, name, id);
 
   @JsonKey(ignore: true)
   @override
@@ -124,10 +139,12 @@ class _$_Product implements _Product {
 }
 
 abstract class _Product implements Product {
-  factory _Product({required String name}) = _$_Product;
+  factory _Product({required String name, required int id}) = _$_Product;
 
   @override
   String get name;
+  @override
+  int get id;
   @override
   @JsonKey(ignore: true)
   _$ProductCopyWith<_Product> get copyWith =>
