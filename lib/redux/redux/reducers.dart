@@ -17,35 +17,27 @@ AppState appReducer(AppState appState, dynamic action) {
 
 Map<Product, int> cartReducer(AppState appState, dynamic action) {
   if (action is AddProductToCart) {
-    final cart = <Product, int>{};
-
-    for (final product in appState.cart.keys) {
+    for (final product in appState.products) {
       if (product.id == action.product.id) {
-        cart[product] = appState.cart[product]! + 1;
-      } else {
-        cart[product] = appState.cart[product]!;
-      }
-    }
-
-    return cart;
-  } else if (action is RemoveProductFromCart) {
-    if (action is AddProductToCart) {
-      final cart = <Product, int>{};
-
-      for (final product in appState.cart.keys) {
-        if (product.id == action.product.id) {
-          final val = appState.cart[product]! - 1;
-          if (val <= 0) {
-            cart[product] = 0;
-          } else {
-            cart[product] = val;
-          }
+        if (appState.cart[product] == null) {
+          appState.cart[product] = 1;
         } else {
-          cart[product] = appState.cart[product]!;
+          appState.cart[product] = appState.cart[product]! + 1;
         }
       }
-
-      return cart;
+    }
+  } else if (action is RemoveProductFromCart) {
+    for (final product in appState.products) {
+      if (product.id == action.product.id) {
+        if (appState.cart[product] != null) {
+          final res = appState.cart[product]! - 1;
+          if (res <= 0) {
+            appState.cart.remove(product);
+          } else {
+            appState.cart[product] = res;
+          }
+        }
+      }
     }
   }
 
