@@ -14,5 +14,6 @@ class CartScreen extends StatelessWidget {
       ),
       itemCount: 2,
     );
+  
   }
 }
