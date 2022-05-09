@@ -25,6 +25,8 @@ dependencies:
   flutter_redux: ^0.9.0
   redux: ^5.0.0
 
+  elementary: ^1.3.0
+
   #Utils
   freezed: ^0.15.0+1
   freezed_annotation: ^0.15.0
