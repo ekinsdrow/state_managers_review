@@ -1,6 +1,5 @@
 import 'package:elementary/elementary.dart';
 import 'package:flutter/material.dart';
-import 'package:state_managers_review/elementary/elementary_model/todo_model.dart';
 import 'package:state_managers_review/elementary/wm/todo_wm.dart';
 
 import '../data/model/todo.dart';
@@ -8,7 +7,10 @@ import '../data/model/todo.dart';
 class TodoScreen extends ElementaryWidget<TodoWm> {
   const TodoScreen({
     Key? key,
-  }) : super(TodoWm.createTodoWM);
+  }) : super(
+          TodoWm.createTodoWM,
+          key: key,
+        );
 
   @override
   Widget build(TodoWm wm) {

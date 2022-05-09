@@ -10,7 +10,7 @@ class ElementaryScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Elementary'),
       ),
-      body: SafeArea(
+      body: const SafeArea(
         child: TodoScreen(),
       ),
     );
