@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:state_managers_review/bloc/widgets/cities_screen.dart';
+import 'package:state_managers_review/elementary/widgets/elementary_screen.dart';
 import 'package:state_managers_review/redux/widgets/redux_screen.dart';
 
 void main() {
@@ -31,6 +32,10 @@ class App extends StatelessWidget {
               _Item(
                 text: 'Redux',
                 widget: ReduxScreen(),
+              ),
+              _Item(
+                text: 'Elementary',
+                widget: ElementaryScreen(),
               ),
             ],
           ),
